@@ -1,0 +1,90 @@
+template-info:
+  name: "!{template_name}"
+  version: 0.1.0
+  summary: |
+    Template for creating a module for alf
+  description: |
+    This is a [Noe](https://github.com/blambeau/noe) template for creating a sub module 
+    for the Alf gem.
+  authors:
+    - {name: Bernard Lambeau, email: blambeau at gmail.com}
+  links:
+    source: git://github.com/blambeau/alf.noe.git
+    documentation: https://github.com/blambeau/alf.noe
+  manifest:
+    .gitignore:
+      description: Files to be ignored by git or another version control system
+      safe-override: false
+    .travis.yml:
+      description: Build matrix for continuous integration on travis-ci.org
+      safe-override: false
+    alf-__lower__.gemspec:
+      description: Gem specification file
+      safe-override: true
+      wlang-dialect: wlang/ruby
+    CHANGELOG.md:
+      description: Information about module changes
+      safe-override: false
+    Gemfile:
+      description: Information used by Bundler, the Ruby dependency manager
+      safe-override: true
+      wlang-dialect: wlang/ruby
+    lib/alf-__lower__.rb:
+      description: Load facade file of the alf module
+      safe-override: true
+    lib/alf/__lower__.rb:
+      description: Main file of the alf module
+      safe-override: false
+    lib/alf/__lower__/version.rb:
+      description: Handler for the version number for the library
+      safe-override: true
+    lib/alf/__lower__/loader.rb:
+      description: Dependency loader for the ruby library
+      safe-override: true
+    LICENCE.md:
+      description: Licensing information
+      safe-override: false
+    Manifest.txt:
+      description: Information about the files that compose the package
+      safe-override: false
+    Rakefile:
+      description: Information for Ruby maker
+      safe-override: true
+      wlang-dialect: wlang/ruby
+    README.md:
+      description: Starter documentation file
+      safe-override: false
+    spec/__lower__spec.rb:
+      description: Main test file of the ruby library
+      safe-override: false
+    spec/spec_helper.rb:
+      description: Helper for ruby spec tests
+      safe-override: false
+    tasks/gem.rake:
+      description: configuration file for 'rake package', 'rake gem' and associated tasks
+      safe-override: true
+      wlang-dialect: wlang/ruby
+    tasks/test.rake:
+      description: configuration file for 'rake test'
+      safe-override: true
+      wlang-dialect: wlang/ruby
+variables:
+  lower:
+    hello_world
+  upper:
+    HelloWorld
+  version:
+    0.13.0
+  summary:
+    A simple "Hello World" example
+  description: |-
+    This hello_world example provides you all you need to build a ruby gem library
+    while applying skeleton-driven coding with Noe (see http://revision-zero.org/noe)
+  authors:
+    - {name: Bernard Lambeau, email: blambeau at gmail.com}
+  links:
+    - http://github.com/blambeau/alf
+  dependencies:
+    - {name: alf,       version: "~> 0.13.0", groups: [runtime]}
+    - {name: rake,      version: "~> 0.9.2",  groups: [development]}
+    - {name: rspec,     version: "~> 2.10",   groups: [development]}
