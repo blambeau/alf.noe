@@ -3,7 +3,7 @@ require "alf/!{lower}/version"
 $version = Alf::!{upper}::Version.to_s
 
 Gem::Specification.new do |s|
-  s.name = +{lower}
+  s.name = "alf-!{lower}"
   s.version = $version
   s.summary = +{summary}
   s.description = +{description}
