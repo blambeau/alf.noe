@@ -1,6 +1,6 @@
 template-info:
   name: "!{template_name}"
-  version: 0.1.0
+  version: 0.2.0
   summary: |
     Template for creating a module for alf
   description: |
@@ -85,6 +85,6 @@ variables:
   links:
     - http://github.com/blambeau/alf
   dependencies:
-    - {name: alf,       version: "~> 0.13.0", groups: [runtime]}
-    - {name: rake,      version: "~> 0.9.2",  groups: [development]}
-    - {name: rspec,     version: "~> 2.10",   groups: [development]}
+    - {name: alf-core,  version: "~> 0.16.0", groups: [runtime]}
+    - {name: rake,      version: "~> 0.10.0", groups: [development]}
+    - {name: rspec,     version: "~> 2.14",   groups: [development]}
