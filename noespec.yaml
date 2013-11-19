@@ -29,6 +29,10 @@ template-info:
       description: Information used by Bundler, the Ruby dependency manager
       safe-override: true
       wlang-dialect: wlang/ruby
+    Gemfile.ci:
+      description: Dependencies for continuous integration
+      safe-override: true
+      wlang-dialect: wlang/ruby
     lib/alf-__lower__.rb:
       description: Load facade file of the alf module
       safe-override: true
@@ -69,6 +73,8 @@ template-info:
       safe-override: true
       wlang-dialect: wlang/ruby
 variables:
+  has_bin:
+    false
   lower:
     hello_world
   upper:
@@ -88,3 +94,4 @@ variables:
     - {name: alf-core,  version: "~> 0.16.0", groups: [runtime]}
     - {name: rake,      version: "~> 0.10.0", groups: [development]}
     - {name: rspec,     version: "~> 2.14",   groups: [development]}
+  depends: []

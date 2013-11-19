@@ -6,5 +6,5 @@ group +{g.to_sym} do
 end}{!{"\n"}}
 *{depends.map{|d| d.groups}.flatten.uniq as g}{
 group +{g.to_sym} do
-  *{depends.select{|d| d.groups.include?(g)} as d}{gem +{d.name}, path: "../!{d.name}"}{!{"\n  "}}
+  *{depends.select{|d| d.groups.include?(g)} as d}{gem +{d.name}, git: "git://github.com/alf-tool/!{d.name}.git"}{!{"\n  "}}
 end}{!{"\n"}}

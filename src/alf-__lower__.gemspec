@@ -15,6 +15,12 @@ Gem::Specification.new do |s|
   s.files = File.readlines(File.join(here, 'Manifest.txt')).
                  inject([]){|files, pattern| files + Dir[File.join(here, pattern.strip)]}.
                  collect{|x| x[(1+here.size)..-1]}
-  *{dependencies.select{|dep| dep.groups != ['runtime']} as dep}{s.add_development_dependency(+{dep.name}, +{dep.version})}{!{"\n  "}}
-  *{dependencies.select{|dep| dep.groups.include?('runtime')} as dep}{s.add_dependency(+{dep.name}, +{dep.version})}{!{"\n  "}}
+?{has_bin}{
+  s.bindir = "bin"
+  s.executables = (Dir["bin/*"]).map{|f| File.basename(f)}
+}
+={dependencies + depends.map{|d| d[:version] = "+{version}"; d } as deps}{
+  *{deps.select{|dep| dep.groups != ['runtime']} as dep}{s.add_development_dependency(+{dep.name}, +{dep.version})}{!{"\n  "}}
+  *{deps.select{|dep| dep.groups.include?('runtime')} as dep}{s.add_dependency(+{dep.name}, +{dep.version})}{!{"\n  "}}
+}
 end
